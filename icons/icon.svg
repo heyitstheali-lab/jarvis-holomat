@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#06303c"/>
+      <stop offset="100%" stop-color="#010a10"/>
+    </radialGradient>
+    <radialGradient id="core">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#9ff6ff"/>
+      <stop offset="75%" stop-color="#2fe0ff" stop-opacity=".45"/>
+      <stop offset="100%" stop-color="#2fe0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <g transform="translate(256 256)" fill="none" stroke="#3be6ff">
+    <circle r="168" stroke-width="5" stroke-dasharray="6 10" opacity=".8"/>
+    <circle r="140" stroke-width="3" opacity=".6"/>
+    <g stroke-width="16" stroke-linecap="butt">
+      <path d="M0 -118 A118 118 0 0 1 83.4 -83.4"/>
+      <path d="M118 0 A118 118 0 0 1 83.4 83.4"/>
+      <path d="M0 118 A118 118 0 0 1 -83.4 83.4"/>
+      <path d="M-118 0 A118 118 0 0 1 -83.4 -83.4"/>
+    </g>
+    <circle r="86" stroke-width="3" stroke-dasharray="3 8"/>
+    <path d="M0 -40 L35 22 L-35 22 Z" stroke-width="6" stroke-linejoin="round"/>
+    <path d="M-200 0H-150M150 0H200M0 -200V-150M0 150V200" stroke-width="5"/>
+  </g>
+  <circle cx="256" cy="256" r="70" fill="url(#core)"/>
+</svg>

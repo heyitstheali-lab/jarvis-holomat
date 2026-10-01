@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>J.A.R.V.I.S. Holomat</title>
+  <meta name="description" content="A hand-tracked holographic table interface for iPad, with the J.A.R.V.I.S. assistant powered by Claude.">
+  <meta name="theme-color" content="#01070b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Holomat">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="vendor/fonts/orbitron-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/holo.css">
+</head>
+<body>
+  <div id="hud" aria-label="Holomat HUD"></div>
+  <canvas id="fx"></canvas>
+  <div id="app-layer"></div>
+
+  <div id="monitor" class="hidden" data-click data-nodwell title="Hand tracking monitor — tap to calibrate">
+    <canvas width="160" height="120"></canvas>
+    <div class="mon-stat"><span>0 HANDS</span><span>--</span></div>
+  </div>
+
+  <div id="jarvis-bar" class="hidden" role="status" aria-live="polite">
+    <div class="jb-orb"></div>
+    <div class="jb-who">J.A.R.V.I.S.</div>
+    <div class="jb-text"></div>
+  </div>
+  <div id="timers"></div>
+
+  <div id="overlay-layer"></div>
+  <div id="cursor-layer"></div>
+
+  <div id="boot">
+    <svg class="boot-ring" viewBox="-110 -110 220 220" aria-hidden="true">
+      <circle r="100" class="s-faint"/>
+      <g class="spin" style="--dur:6s"><circle r="92" class="s-line" stroke-dasharray="40 18" stroke-width="3"/></g>
+      <g class="spin-rev" style="--dur:9s"><circle r="74" class="s-thin" stroke-dasharray="4 6"/></g>
+      <g class="spin" style="--dur:3s"><path d="M0 -56 A56 56 0 0 1 48.5 28" class="s-thick" stroke-width="5"/></g>
+      <circle r="34" fill="url(#bootGrad)" class="pulse-op"/>
+      <circle r="16" class="s-fill-deep" stroke-width="3"/>
+      <defs><radialGradient id="bootGrad"><stop offset="0%" style="stop-color:#fff"/><stop offset="60%" style="stop-color:var(--c);stop-opacity:.5"/><stop offset="100%" style="stop-color:var(--c);stop-opacity:0"/></radialGradient></defs>
+    </svg>
+    <h1>J.A.R.V.I.S. HOLOMAT</h1>
+    <div class="boot-sub">HOLOGRAPHIC TABLE INTERFACE</div>
+    <div class="boot-log"></div>
+    <button class="boot-go" type="button">TAP TO INITIALIZE</button>
+  </div>
+
+  <noscript><p style="position:fixed;inset:0;display:grid;place-items:center;color:#7ef">The Holomat needs JavaScript enabled.</p></noscript>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

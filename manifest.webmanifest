@@ -1,0 +1,20 @@
+{
+  "name": "J.A.R.V.I.S. Holomat",
+  "short_name": "Holomat",
+  "description": "Hand-tracked holographic table interface with the J.A.R.V.I.S. assistant (Claude).",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#01070b",
+  "theme_color": "#01070b",
+  "categories": ["productivity", "games", "utilities"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
