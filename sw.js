@@ -1,12 +1,13 @@
 // Holomat service worker: app shell precached; everything else (incl. the
 // hand-tracking model + wasm) cached on first use so the Holomat runs offline.
-const VERSION = 'holomat-v1.0.0';
+const VERSION = 'holomat-v1.1.0';
 const SHELL = [
   './',
   './index.html',
   './manifest.webmanifest',
   './css/holo.css',
   './js/main.js',
+  './js/hud.js',
   './js/core/store.js',
   './js/core/audio.js',
   './js/core/ui.js',
@@ -40,6 +41,7 @@ const SHELL = [
   './vendor/fonts/rajdhani-600.woff2',
   './vendor/fonts/rajdhani-700.woff2',
   './vendor/fonts/share-tech-mono-400.woff2',
+  './assets/armor-hologram.webp',
   './icons/icon.svg',
   './icons/icon-192.png',
   './icons/apple-touch-icon.png',

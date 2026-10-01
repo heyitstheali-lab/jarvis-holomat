@@ -1,8 +1,21 @@
 # J.A.R.V.I.S. Holomat
 
 A holographic, hand-tracked tabletop interface for **iPad**, installable as a PWA.
-You control it with your hands through the iPad camera. Tap the glowing core and
-an animation powers up a ring of **8 modules**:
+You control it with your hands through the iPad camera.
+
+The home screen is built from the Holomat drawing in `assets/home-design.jpg`. The
+armor hologram stands in the middle (cut out of the drawing by `npm run hologram`)
+and everything around it is live:
+- a heading tape that follows your hand
+- counters for hands and timers
+- the clock and date
+- a system status list
+- a honeycomb, which tracks your hand
+- a spinning globe
+- a column of quick actions
+- **SIGNAL** (hand-tracking quality) and **BATTERY** arcs
+
+**Tap the arc reactor** and it powers up. The **8 modules** then burst out of it:
 
 | Module | What it does |
 |---|---|
@@ -94,7 +107,8 @@ Peer-to-peer WebRTC through [PeerJS](https://peerjs.com). The free public PeerJS
 ```
 index.html            HUD shell, boot screen
 css/holo.css          holographic theme
-js/main.js            HUD (reactor, gauges, launcher animation), app host, boot
+js/main.js            app host, boot sequence, quick actions
+js/hud.js             home screen: the drawing's HUD, armor hologram, arc-reactor launcher
 js/core/hand.js       camera + MediaPipe, cursor smoothing, pinch/dwell → synthetic pointer events
 js/core/hand-worker.js  CPU inference in a Web Worker
 js/core/calibration.js  palm/pinch scan + 5-point homography
@@ -105,6 +119,7 @@ js/core/device.js     iPad model + pixel density detection
 js/apps/*.js          the 8 modules
 vendor/               three.js, MediaPipe, PeerJS, Anthropic SDK, fonts (generated)
 models/               hand_landmarker.task
+assets/               home-design.jpg (the drawing) + armor-hologram.webp (cut-out)
 sw.js, manifest.webmanifest, icons/   PWA
 ```
 
@@ -112,6 +127,7 @@ sw.js, manifest.webmanifest, icons/   PWA
 npm install          # dev tooling only
 npm run vendor       # re-copy / re-bundle vendor/ and download the hand model
 npm run icons        # render icons/icon.svg to PNGs
+npm run hologram     # re-cut assets/armor-hologram.webp from assets/home-design.jpg
 npm start            # serve on :8080
 npm run check        # headless smoke test (boots, starts tracking with a fake camera, opens every app)
 ```

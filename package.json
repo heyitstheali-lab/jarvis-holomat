@@ -7,6 +7,7 @@
   "scripts": {
     "vendor": "node scripts/vendor.mjs",
     "icons": "node scripts/make-icons.mjs",
+    "hologram": "node scripts/make-hologram.mjs",
     "start": "http-server . -p 8080 -c-1",
     "check": "node scripts/check.mjs"
   },

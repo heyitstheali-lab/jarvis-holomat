@@ -77,6 +77,7 @@ export const GLYPHS = {
   area: 'M4 4h16v16H4zM4 9h3M4 14h3M9 4v3M14 4v3',
   grid: 'M4 4h16v16H4zM4 12h16M12 4v16',
   card: 'M3 6h18v12H3zM3 10h18M6 15h4',
+  timer: 'M12 8v5l3 2M12 4.5a8 8 0 1 0 0 16 8 8 0 1 0 0-16zM4.5 5.5l3-2.5M19.5 5.5l-3-2.5',
 };
 
 export function glyph(name, cls = '') {

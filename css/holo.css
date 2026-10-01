@@ -417,3 +417,24 @@ body.app-open #jarvis-bar.hidden { transform: translateX(-50%) translateY(20px);
   .spin, .spin-rev, .flow, .flow-rev, .pulse-op { animation-duration: 0s !important; animation: none !important; }
 }
 svg.gi { width: 1.25em; height: 1.25em; flex: none; vertical-align: -0.2em; }
+
+/* ---------- home screen (drawing) ---------- */
+.t-clock { fill: #eaf8ff; font-family: var(--font-hud); font-weight: 700; letter-spacing: .02em; stroke: var(--c-a35); stroke-width: 2; paint-order: stroke; }
+.t-white { fill: #eaf8ff; font-family: var(--font-hud); font-weight: 700; }
+.t-date { fill: #eaf8ff; font-family: var(--font-hud); font-weight: 700; letter-spacing: .14em; stroke: var(--c-a35); stroke-width: 2; paint-order: stroke; }
+.t-arc { fill: #eaf8ff; font-family: var(--font-hud); font-weight: 900; letter-spacing: .06em; stroke: var(--c-a60); stroke-width: 2; paint-order: stroke; }
+.bust { animation: holoFlicker 7s infinite; }
+@keyframes holoFlicker { 0%, 46%, 52%, 100% { opacity: 1 } 47% { opacity: .78 } 48% { opacity: .96 } 49.5% { opacity: .84 } }
+.bust-wrap { transition: opacity .6s; }
+.hud-root.launcher-open .bust-wrap { opacity: .72; }
+.bust-scan { animation: bustScan 5.5s linear infinite; }
+@keyframes bustScan { from { transform: translateY(0); } to { transform: translateY(780px); } }
+.hint-ring { animation: hintPulse 2.4s ease-out infinite; }
+@keyframes hintPulse { from { transform: scale(.85); opacity: .9; } to { transform: scale(1.6); opacity: 0; } }
+.hud-root.launcher-open .hint-ring { display: none; }
+.hc-cell { fill: var(--c-a05); stroke: var(--c); stroke-width: 1.5; opacity: .8; transition: fill .5s; }
+.hc-cell.lit { fill: var(--c-hi); }
+.quick .rc-box { fill: hsl(200 30% 60% / .16); stroke: hsl(200 40% 70% / .25); opacity: 0; transition: opacity .25s; }
+.quick.on .rc-box, .quick.holo-hover .rc-box { opacity: 1; }
+.quick.on .rc-dash { stroke: var(--ok); }
+.emblem .hb-face { fill: hsl(var(--hue) 60% 8% / .6); }
